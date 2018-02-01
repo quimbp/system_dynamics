@@ -1,0 +1,18 @@
+&NAMFDVAR
+ IFILE   = "fdvar_ini.dat",
+ OFILE   = "obs_noise_02_sampl_010.dat",
+ BFILE   = 'lorenz.cov',
+ MFILE   = 'lorenz.mean',
+ ALPHA   = 1.0D0,
+ IOBS    = 3*1,
+ r2x     = 2.0D0,
+ r2y     = 2.0D0,
+ r2z     = 2.0D0,
+ OPATH   = "./",
+ TO      =  0.00,
+ TF      =  20.00,
+ NCYCLES = 200,
+ AFILE   = "fdvar_opt.dat",
+ TFILE   = "fdvar_noise_02_sampl_010.dat",
+ EFILE   = "fdvar_end.dat",
+ /

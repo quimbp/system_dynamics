@@ -1,0 +1,15 @@
+&NAMFDVAR
+ IFILE   = "fdvar_ini.dat",
+ OFILE   = "obs_noise_02_sampl_050.dat",
+ IOBS    = 3*1,
+ R2X     = 0.2D0,
+ R2Y     = 0.2D0,
+ R2Z     = 0.2D0,
+ OPATH   = "./",
+ TO      =  0.00,
+ TF      =  20.00,
+ NCYCLES = 200,
+ AFILE   = "fdvar_opt.dat",
+ TFILE   = "fdvar_noise_02_sampl_050.dat",
+ EFILE   = "fdvar_end.dat",
+ /

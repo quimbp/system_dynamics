@@ -1,0 +1,45 @@
+! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+! Lorenz Box
+! Namelist for nudging
+! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+! ----------------------------------------------------------------------
+! enkf parameters 
+! ----------------------------------------------------------------------
+
+&namenkf
+
+  ! ... Default experiment
+  ! ...
+  default = .false.
+
+  ! ... Data assimilation experiment
+  ! ...
+  opath = 'EXP035C'
+  Iobs    = 0, 1, 0
+  ofile = '../makeobs/obs_noise_02_freq_25_stochastic.dat'
+  sfile = '../eof/z.scale'
+!  efile = '../eof/Eo.matrix'
+  efile = '../nudging/initial.condition'
+  dfile = 'enkf.diags'
+
+  ! ... Enkf main parameters
+  ! ...
+  rank   = 10
+  forget = 1.5000
+  rseed  = 0.2D0
+  r2x    = 2.0
+  r2y    = 2.0
+  r2z    = 2.0
+
+  ! ... Model parameters
+  ! ...
+  dt      =  0.01D0
+  sigma   = 10.0D0
+  rho     = 28.0D0
+  beta    = 2.6666666666666665D0
+
+  ! ... Random number generator seed
+  ! ...
+  idum    = -1
+/

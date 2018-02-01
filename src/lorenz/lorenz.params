@@ -1,0 +1,5 @@
+&params
+  lorenz_beta  = 2.6666666666666665
+  lorenz_sigma = 10.0
+  lorenz_rho   = 28.0
+/

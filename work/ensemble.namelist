@@ -1,0 +1,10 @@
+&NAMENS
+ RANK   = 10,
+ METHOD = 1,
+ EFILE  = "Eo.matrix",
+ TFILE  = "lorenz_simulation.dat",
+ MFILE  = "",
+ SFILE  = "",
+ RSEED  = 0.000,
+ IDUM   = -1,
+ /

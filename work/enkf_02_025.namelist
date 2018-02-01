@@ -1,0 +1,27 @@
+! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+! System Dynamics
+! Namelist for EnKF
+! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+! ----------------------------------------------------------------------
+! Ensemble Kalman Filter Parameters
+! ----------------------------------------------------------------------
+
+&NAMENKF
+ RANK   =  10,
+ EFILE  = "Eo.matrix",
+ SFILE  = "lorenz_simulation_std.dat",
+ OFILE  = "obs_noise_02_sampl_025.dat",
+ IOBS   = 3*1,
+ OPATH  = "./",
+ DFILE  = "enkf_noise_02_sampl_025.diags",
+ BFILE  = 'enkf_b_noise_02_sampl_025.dat'
+ AFILE  = 'enkf_a_noise_02_sampl_025.dat'
+ YFILE  = 'enkf_y_noise_02_sampl_025.dat'
+ R2X    =  2.00,
+ R2Y    =  2.00,
+ R2Z    =  2.00,
+ FORGET =  1.20,
+ RSEED  =  0.10,
+ IDUM   =  -1,
+ /

@@ -1,0 +1,69 @@
+#! /usr/bin/env python3
+import sys
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+
+try:
+  import tkinter as tk
+  from tkinter import ttk
+  from tkinter import messagebox
+  from tkinter import filedialog
+except:
+  import Tkinter as tk
+  import ttk
+  import tkMessageBox as messagebox
+  import tkFileDialog as filedialog
+
+
+from sysdyn import *
+
+# =========
+def main():
+# =========
+
+  def make_plot():
+    global tfile
+    data = DataStruct()
+    data.Read(tfile)
+    data.Plot()
+
+  def select():
+    global tfile
+
+    nn = filedialog.askopenfile()
+    if nn is not None:
+      tfile = '%s' % nn.name
+    else:
+      quit()
+
+
+  print(' ')
+  print(' ====================')
+  print(' > show')
+
+  global tfile
+
+  data = DataStruct()
+
+  try:
+    tfile = sys.argv[1]
+    data = DataStruct()
+    data.Read(tfile)
+    data.Plot()
+  except:
+    root = tk.Tk()
+    root.title('PYTHON SHOW')
+    root.grid_rowconfigure(0,weight=0)
+    root.resizable(width=False,height=True)
+    root.protocol('WM_DELETE_WINDOW',quit)
+    F0 = ttk.Frame(padding=5)
+    ttk.Button(F0,text='Select',command=select).grid(row=0)
+    ttk.Button(F0,text='Plot',command=make_plot).grid(row=1)
+    ttk.Button(F0,text='Close',command=quit).grid(row=2)
+    F0.grid()
+    root.mainloop()
+
+
+if __name__ == '__main__':
+  main()
